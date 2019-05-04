@@ -1,28 +1,28 @@
-import React from 'react';
-import { TextField } from '@material-ui/core';
+import React from 'react'
+import { TextField } from '@material-ui/core'
 
-import useInputState from './useInputState';
+import useInputState from './useInputState'
 
 const TodoForm = ({ saveTodo }) => {
-  const { value, onChange, reset } = useInputState('');
+  const { value, onChange, reset } = useInputState('')
 
   return (
     <form
       onSubmit={event => {
-        event.preventDefault();
-        saveTodo(value);
-        reset();
+        event.preventDefault()
+        saveTodo(value)
+        reset()
       }}
     >
       <TextField
-        variant="outlined"
-        placeholder="Add todo"
-        margin="normal"
+        variant='outlined'
+        placeholder='Add todo'
+        margin='normal'
         onChange={onChange}
         value={value}
       />
     </form>
-  );
-};
+  )
+}
 
-export default TodoForm;
+export default TodoForm
